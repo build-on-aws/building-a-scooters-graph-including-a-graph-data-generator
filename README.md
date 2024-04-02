@@ -79,29 +79,28 @@ $ pip install -r requirements.txt
 
 Add/change your own environment to the cdk.json file, at the 'context' key. For example, if you want to add your 'Production' environment:
 ```json
-...
-"context": {
-"environments": {
-  "production": {
-    "vpc_neptune": "",
-    "s3_prefix_scooters_data_loc":"scooters-graph-demo/neptune/data",
-    "lambda_datagen_num_vehicles":"1000",
-    "lambda_datagen_num_parts":"10",
-    "api_gtw_ip_addr_whitelist_list":""
-  }
-},
-...
-}
+  "context": {
+    "env-production": {
+      "vpc_neptune": "",
+      "s3_prefix_scooters_data_loc":"scooters-graph-demo/neptune/data",
+      "lambda_datagen_num_vehicles":"1000",
+      "lambda_datagen_num_parts":"10",
+      "api_gtw_ip_addr_whitelist_list":""
+    },
 ```
+Optional CLI: ```cdk deploy --context <<env-production>>```
 
-⚠️ Important: to create a safer deployment for this demo, you need to add/leave one environment (i.e. even if the optional keys have empty values, like the ones above):
+⚠️ Important: to create a safer deployment for this demo, you need to add/leave one environment; i.e. even if the optional keys, like vpc_neptune, have empty values:
 
 - <b>vpc_neptune</b> [optional]: if you want to deploy all the assets in your VPC, instead of creating a new one, you can change it here.
+- <b>api_gtw_ip_addr_whitelist_list</b> [optional]: list of IPs or CIDR to be whitelisted in the API Gateway; i.e. to query the Neptune graph from a corporate VPN CIDR.
 - <b>s3_prefix_scooters_data_loc</b>: to change the path (S3 Key), after the new S3 bucket name.
 - <b>lambda_datagen_num_vehicles</b>: number of scooters (graph nodes) to create in the dataset
 - <b>lambda_datagen_num_parts</b>: number of parts (graph nodes) to add per scooter.
-- <b>api_gtw_ip_addr_whitelist_list</b> [optional]: list of IPs or CIDR to be whitelisted in the API Gateway.
 
+💡 Tip: You can move these context options to the Parameter Store in AWS Systems Manager. This service allows you to overwrite the parameter values, keeping an internal [versioning record](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-versions.html).
+
+### Building Time!
 
 You can now synthesize your CDK stacks:
 
