@@ -11,34 +11,34 @@ from stack_vpc_neptune.vpc_neptune_stack import VpcNeptuneStack
 app = cdk.App()
 env_aws_settings = Environment(account=os.environ['CDK_DEFAULT_ACCOUNT'], region=os.environ['CDK_DEFAULT_REGION'])
 
-# Choose environment to deploy; see cdk.json file. CLI: cdk deploy --context <<env-production>> 
+# Add environment to deploy (see cdk.json file). CLI: cdk deploy --context <<env-production>> 
 env_context_params = app.node.try_get_context("env-production")
 
-# SSM Parameters. Here, you can save above's DICT, instead of hard-coding.
+# Optional, so you can store above's parameters in AWS Systems Manager SSM instead
 ssm_stack = SsmParametersStack(app, "ScootersSsmParametersStack",
                               input_metadata=env_context_params, 
                               env=env_aws_settings
                               )
 
-# S3 stack to create bucket
+# Amazon S3 bucket for Graph data
 stack_s3 = S3Stack(app, "ScootersS3Stack", 
                    input_metadata=env_context_params, 
                    env=env_aws_settings
                    )
 
-# Lambda stack to create Graph data generator
+# AWS Lambda stack to create the Graph data generator
 stack_lambda_datagen = ScootersDataStack(app, "ScootersDataStack",
                                          input_metadata=env_context_params, 
                                          env=env_aws_settings
                                          )
 
-# Neptune cluster stack;
+# Amazon Neptune cluster and VPC stack
 stack_vpc_neptune = VpcNeptuneStack(app, "ScootersNeptuneStack",
                               input_metadata=env_context_params,
                               env=env_aws_settings
                               )
 
-# Stack dependencies (i.e. both, dataGen and Neptune cluster, need the S3 bucket to grant RW privs)
+# Stack dependencies
 stack_lambda_datagen.add_dependency(stack_s3)
 stack_vpc_neptune.add_dependency(stack_s3)
 

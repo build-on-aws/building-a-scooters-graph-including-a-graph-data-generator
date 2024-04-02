@@ -22,8 +22,8 @@ By the end of this step-by-step [YouTube tutorial](https://www.youtube.com/@awsd
 * Learn how to use Generative AI, to help you in coding and abstracting Gremlin query language with natural language.
 * Have your own customisable Graph Data Generator.
 * Appreciate scenarios, where graph databases outshine their relational counterparts.
-* Get hands-on experience, with setting up, loading and querying a graph database on AWS.
-* Build most of the tutorial using Infrastructure-as-Code (IaC) Amazon CDK
+* Get hands-on experience with setting up, loading and querying a graph database on AWS.
+* Build most of the tutorial using Infrastructure-as-Code (IaC) Amazon CDK.
 * For those with relational databases experience, this exploration will illuminate new possibilities and data solutions. For newcomers, you're about to dive into a dynamic way of visualizing and interpreting data. 
 
 ## 🛠 Use cases
