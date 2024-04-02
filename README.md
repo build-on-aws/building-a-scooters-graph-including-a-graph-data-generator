@@ -148,7 +148,7 @@ Once you have deployed the Amazon CDK project successfully, you can carry on wit
 ![](assets/architecture.drawio.png)
 
 ### Adapt the graph to your own use case
-The graph data model uses Any Python Tree Data, to deploy the Vehicle hierarchy. You can modify this hierarchy graph model via the Lambda function, within the Data Generation stack.
+The graph data model uses [Any Python Tree Data](https://anytree.readthedocs.io/en/latest/), to deploy the Vehicle hierarchy. You can modify this hierarchy graph model via the Lambda function, within the Data Generation stack.
 
 ### Data model
 
