@@ -14,7 +14,7 @@ Welcome to our tutorial "Implementing a Graph database for a Scooters Business o
 
 ## 🔰 Description
 
-By the end of this tutorial, you will:
+By the end of this step-by-step [YouTube tutorial](https://www.youtube.com/@awsdevelopers), you will:
 
 * Understand the fundamentals of Graph Databases; i.e. main differences between graph and relational DBs.
 * Gain insights into the unique advantages and challenges, offered by graph databases.
