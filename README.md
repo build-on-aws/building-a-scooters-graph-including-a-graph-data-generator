@@ -143,7 +143,7 @@ Once you have deployed the Amazon CDK project successfully, you can carry on wit
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-## Architecture
+## 🏗️ Architecture
 
 ![](assets/architecture.drawio.png)
 
@@ -154,7 +154,7 @@ The graph data model uses [Any Python Tree Data](https://anytree.readthedocs.io/
 
 ![](assets/scooters_graph_model.drawio.png)
 
-## Cleanup
+## 🗑️ Cleanup
 1. Via AWS CLI or the AWS console, empty the S3 bucket created by our CDK stack; e.g. s3://scooterss3stack-scootersdemoXXXX/. Otherwise, our CDK Removal Policy will not be able to delete the bucket.
 2. Run the command below, to delete all resources deployed by our CDK project (architecture image above). This will ask if you want to delete those stacks; enter Y.
 ```
