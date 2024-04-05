@@ -11,10 +11,10 @@ class ScootersDataStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, input_metadata, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # AWS-maintained Lambda layer. More at: aws-sdk-pandas.readthedocs.io/en/stable/layers.html
+        # AWS-maintained layer. Do not Change account ID. See aws-sdk-pandas.readthedocs.io/en/stable/layers.html
         sdk_lambda_layer_arn = f"arn:aws:lambda:{Aws.REGION}:336392948345:layer:AWSSDKPandas-Python39:3"
         
-        # Create function, using SDK for Pandas (formerly AWS DataWrangler), as a Lambda layer (aws-managed)
+        # Create function, using SDK for Pandas, as a Lambda layer (aws-managed)
         lambda_fn = _alambda.PythonFunction(
             self,
             "lambda_fn",
