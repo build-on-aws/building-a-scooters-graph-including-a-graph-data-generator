@@ -41,7 +41,7 @@ def ask_graph(llm_query, neptune_endpoint, region_name="us-west-2"):
 
         # Create Prompt template. Remember this can change for every model. 
         prompt_template = f"""
-            Human: Please, don't apologize and just respond the question directly.  
+            Human: Do not apologize and just respond the question directly.  
             
             question: {llm_query}
 
@@ -96,7 +96,8 @@ def query_scooter_asset(scooter_asset_code, neptune_endpoint):
 
 def run_gremlin_query(gremlin_query, neptune_endpoint):
     """
-    Temporary feature for testing: open query. IMPORTANT: Delete this Fn. as it is unsecure (e.g. SQL Injection)
+    Temporary feature for testing: open query. 
+    - IMPORTANT: treat this (ApiGateway-IP-protected) function carefully, as it opens direct comms to the DB
     
     @gremlin_query (type str):
         Gremlin query; e.g. g.V().hasLabel('scooter').out().limit(5).toList()
