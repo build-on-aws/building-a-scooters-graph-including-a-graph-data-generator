@@ -6,6 +6,7 @@ __pycache__
 *.egg-info
 node_modules
 .DS_Store
+ash_output
 
 ### CDK-specific ignores ###
 .cdk.staging

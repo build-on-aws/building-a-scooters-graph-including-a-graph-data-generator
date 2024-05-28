@@ -15,7 +15,7 @@ env_aws_settings = Environment(account=os.environ['CDK_DEFAULT_ACCOUNT'], region
 env_context_params = app.node.try_get_context("env-production")
 
 # Optional, so you can store above's parameters in AWS Systems Manager SSM instead
-ssm_stack = SsmParametersStack(app, "ScootersSsmParametersStack",
+stack_ssm = SsmParametersStack(app, "ScootersSsmParametersStack",
                               input_metadata=env_context_params, 
                               env=env_aws_settings
                               )
