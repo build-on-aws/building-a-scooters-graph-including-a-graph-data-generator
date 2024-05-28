@@ -1,6 +1,8 @@
-# BuildOnAWS Blog: Build a graph in Amazon Neptune with CDK & Generative AI copy V3
+# AWS Developers: Build a graph in Amazon Neptune with CDK & Generative AI
 
 Note: while this tutorial provides a step-by-step to deploy this project, it doesn’t provide detailed explanations about each section. For that, we highly recommend to visit our [YouTube channel playlists](https://www.youtube.com/@awsdevelopers/playlists) and look for this same tutorial in video format.
+
+> in the project_blog folder, you can also find more-detailed instructions to run all this project, step by step.
 
 ## Introduction
 
@@ -37,7 +39,7 @@ Make sure the following software is installed on your local environment:
 * Install Amazon CDK: `npm install -g aws-cdk `
 * Install Visual Studio Code with Amazon Code Whisperer Plugin @ [https://youtu.be/rHNMfOK8pWI](https://youtu.be/rHNMfOK8pWI?feature=shared)
 
-1. Open the cloned project from the previous step, from your preferred IDE. We’ll be using Visual Studio Code.
+2. Open the cloned project from the previous step, from your preferred IDE. We’ll be using Visual Studio Code.
 
 Note: if you don’t have any preferred IDE, you can download Visual Studio Code for free from https://visualstudio.microsoft.com/vs/community/.
 
@@ -65,7 +67,7 @@ Once you open the cloned project, start a new terminal in VS code, to create a v
 └── tests
 ```
 
-1. Create a virtual environment, to install our dependencies:
+3. Create a virtual environment, to install our dependencies:
 
 ```
 # Create it
@@ -147,7 +149,7 @@ For the rest of the CDK commands, we’ll be using the profile option. If you’
 
 >>> **Important!** Make sure Docker Desktop is running on your computer. Otherwise the following steps will fail.
 
-    2. Once you make sure the CLI works and list your buckets, we can now list the CDK Stacks included in this project
+2. Once you make sure the CLI works and list your buckets, we can now list the CDK Stacks included in this project
 
 **Important**: only use supported regions for [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html#bedrock-regions). By default, Oregon (us-west-2) is preset.
 
@@ -162,7 +164,7 @@ ScootersDataStack
 ScootersNeptuneStack
 ```
 
-1. Bootstrap the target AWS account:
+3. Bootstrap the target AWS account:
 
 ```
 cdk bootstrap --profile profile-aws-dev-sandbox
@@ -172,7 +174,7 @@ Note: *Bootstrapping* is the process of provisioning resources for the AWS CDK b
 More at: [docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html)
 
 
-1. Let’s make sure everything is ready to deploy, by synthesizing our CDK Project
+4. Let’s make sure everything is ready to deploy, by synthesizing our CDK Project
 
 The cdk synth command executes your app, which causes the resources defined in it to be translated into an AWS CloudFormation template. The displayed output of cdk synth is a YAML-format template. This also catches logical errors in defining your AWS resources.
 
@@ -201,7 +203,7 @@ Successfully synthesized to /.../building-a-graph-database-for-scooters/cdk.out
 Supply a stack id (ScootersSsmParametersStack, ScootersS3Stack, ScootersDataStack, ScootersNeptuneStack) to display its template. 
 ```
 
-1. Building time! Let’s finally run our CDK project. This will deploy all stacks in our entry point `app.py` or what we saw in the `cdk ls` command, building the architecture below.
+5. Building time! Let’s finally run our CDK project. This will deploy all stacks in our entry point `app.py` or what we saw in the `cdk ls` command, building the architecture below.
 
 Tip: the deploy command will ask a few times if you approve the IAM permissions to be deployed by this stack. You simply need to enter Y to continue. However, if you want to leave the entire command unattended, you can use the flag `--require-approval never`
 
