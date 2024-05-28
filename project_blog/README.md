@@ -2,8 +2,6 @@
 
 Note: while this tutorial provides a step-by-step to deploy this project, it doesn’t provide detailed explanations about each section. For that, we highly recommend to visit our [YouTube channel playlists](https://www.youtube.com/@awsdevelopers/playlists) and look for this same tutorial in video format.
 
-> in the project_blog folder, you can also find more-detailed instructions to run all this project, step by step.
-
 ## Introduction
 
 In today's data-driven world, the way we store, query, and interact with data is evolving. As the complexity and interconnectivity of our data increase, traditional storage methods such as Relational Database Management Systems (RDBMS) face new challenges. This is where graph databases emerge, as a powerful approach to handle highly interconnected data. In addition, with the emerge of Generative AI, there's a new need that relies on simplifying complex methods to query data stores, like using natural language instead of database languages.   

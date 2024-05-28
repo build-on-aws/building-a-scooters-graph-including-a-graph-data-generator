@@ -26,6 +26,9 @@ By the end of this step-by-step [YouTube tutorial](https://www.youtube.com/@awsd
 * Build most of the tutorial using Infrastructure-as-Code (IaC) Amazon CDK.
 * For those with relational databases experience, this exploration will illuminate new possibilities and data solutions. For newcomers, you're about to dive into a dynamic way of visualizing and interpreting data. 
 
+> 💥 Important: in the project_blog folder, you can also find more-detailed instructions to run all this project, step by step.
+
+
 ## 🛠 Use cases
 
 - Comparison of technology applicability: <i>"use the right tool for the right job"</i>.
