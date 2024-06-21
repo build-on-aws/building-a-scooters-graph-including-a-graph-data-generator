@@ -1,6 +1,6 @@
 # AWS Developers: Build a graph in Amazon Neptune with CDK & Generative AI
 
-Note: while this tutorial provides a step-by-step to deploy this project, it doesn’t provide detailed explanations about each section. For that, we highly recommend to visit our [YouTube Tutorial](https://www.youtube.com/watch?v=w9cYOw0YaiA), from our [YouTube AWS Developers channel](https://www.youtube.com/@awsdevelopers/playlists), and look for this same tutorial in video format.
+Note: while this tutorial provides a step-by-step to deploy this project, it doesn’t provide detailed explanations about each section. For that, we highly recommend to visit our [YouTube Tutorial](https://www.youtube.com/playlist?list=PL5bUlblGfe0I3HWMIj6EWG7bVIMbQJE9l), from our [YouTube AWS Developers channel](https://www.youtube.com/@awsdevelopers/playlists), and look for this same tutorial in video format.
 
 ## Introduction
 
