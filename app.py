@@ -17,25 +17,29 @@ env_context_params = app.node.try_get_context("env-production")
 # Optional, so you can store above's parameters in AWS Systems Manager SSM instead
 stack_ssm = SsmParametersStack(app, "ScootersSsmParametersStack",
                               input_metadata=env_context_params, 
-                              env=env_aws_settings
+                              env=env_aws_settings,
+                              description="Graph Demo: optional, so you can store Context parameters in SSM instead (uksb-79abqvzsoy)"
                               )
 
 # Amazon S3 bucket for Graph data
 stack_s3 = S3Stack(app, "ScootersS3Stack", 
                    input_metadata=env_context_params, 
-                   env=env_aws_settings
+                   env=env_aws_settings,
+                   description="Graph Demo: Amazon S3 bucket to store the Graph data (uksb-79abqvzsoy)"
                    )
 
 # AWS Lambda stack to create the Graph data generator
 stack_lambda_datagen = ScootersDataStack(app, "ScootersDataStack",
                                          input_metadata=env_context_params, 
-                                         env=env_aws_settings
+                                         env=env_aws_settings,
+                                         description="Graph Demo: Lambda stack to create the Graph data generator (uksb-79abqvzsoy)"
                                          )
 
 # Amazon Neptune cluster and VPC stack
 stack_vpc_neptune = VpcNeptuneStack(app, "ScootersNeptuneStack",
                               input_metadata=env_context_params,
-                              env=env_aws_settings
+                              env=env_aws_settings,
+                              description="Graph Demo: Amazon Neptune cluster and VPC (uksb-79abqvzsoy)"
                               )
 
 # Stack dependencies
@@ -46,6 +50,5 @@ stack_vpc_neptune.add_dependency(stack_s3)
 Tags.of(stack_s3).add("project", "scooters-demo/stack-s3")
 Tags.of(stack_lambda_datagen).add("project", "scooters-demo/stack-lambda-datagen")
 Tags.of(stack_vpc_neptune).add("project", "scooters-demo/stack-vpc-neptune")
-
 
 app.synth()
