@@ -18,28 +18,28 @@ env_context_params = app.node.try_get_context("env-production")
 stack_ssm = SsmParametersStack(app, "ScootersSsmParametersStack",
                               input_metadata=env_context_params, 
                               env=env_aws_settings,
-                              description="Graph Demo: optional, so you can store Context parameters in SSM instead (uksb-79abqvzsoy)"
+                              description="Graph Demo: optional, so you can store Context parameters in SSM instead."
                               )
 
 # Amazon S3 bucket for Graph data
 stack_s3 = S3Stack(app, "ScootersS3Stack", 
                    input_metadata=env_context_params, 
                    env=env_aws_settings,
-                   description="Graph Demo: Amazon S3 bucket to store the Graph data (uksb-79abqvzsoy)"
+                   description="Graph Demo: Amazon S3 bucket to store the Graph data."
                    )
 
 # AWS Lambda stack to create the Graph data generator
 stack_lambda_datagen = ScootersDataStack(app, "ScootersDataStack",
                                          input_metadata=env_context_params, 
                                          env=env_aws_settings,
-                                         description="Graph Demo: Lambda stack to create the Graph data generator (uksb-79abqvzsoy)"
+                                         description="Graph Demo: Lambda stack to create the Graph data generator."
                                          )
 
 # Amazon Neptune cluster and VPC stack
 stack_vpc_neptune = VpcNeptuneStack(app, "ScootersNeptuneStack",
                               input_metadata=env_context_params,
                               env=env_aws_settings,
-                              description="Graph Demo: Amazon Neptune cluster and VPC (uksb-79abqvzsoy)"
+                              description="Graph Demo: Amazon Neptune cluster and VPC (uksb-79abqvzsoy)."
                               )
 
 # Stack dependencies
